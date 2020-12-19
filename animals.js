@@ -89,5 +89,44 @@ exports.animals = [
         birthday:"10/1",
         gender:"남자",
         image:require("./images/잭슨.png")
+    },
+    {
+        id:7,
+        name:"애플",
+        comment:"\"사람들은 닮기 마련\"",
+        fcolor:"컬러풀한 색, 빨간색",
+        fstyle:"큐트, 심플",
+        fsong:"사랑해",
+        shabit:"큐룽",
+        hobby:"뛰어다니기",
+        birthday:"9/24",
+        gender:"여자",
+        image:require("./images/애플.png")
+    },
+    {
+        id:8,
+        name:"오로라",
+        comment:"\"가는 날이 장날\"",
+        fcolor:"핑크색, 빨간색",
+        fstyle:"엘레강스, 큐트",
+        fsong:"블루 삼각 김밥",
+        shabit:"랄라",
+        hobby:"책읽기",
+        birthday:"1/27",
+        gender:"여자",
+        image:require("./images/오로라.png")
+    },
+    {
+        id:9,
+        name:"비앙카",
+        comment:"\"누더기를 입어도 마음은 비단\"",
+        fcolor:"파란색, 하늘색",
+        fstyle:"엘레강스, 쿨",
+        fsong:"K.K.소울",
+        shabit:"멋져",
+        hobby:"	패션",
+        birthday:"9/17",
+        gender:"여자",
+        image:require("./images/비앙카.png")
     }
 ]
