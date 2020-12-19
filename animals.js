@@ -10,7 +10,8 @@ exports.animals = [
         hobby:"노래",
         birthday:"9/29",
         gender:"남자",
-        image:require("./images/쭈니.png")
+        image:require("./images/쭈니.png"),
+        link:`https://www.youtube.com/embed/OOuZf5bxLL4`
     },
     {
         id:1,
@@ -23,7 +24,8 @@ exports.animals = [
         hobby:"자연관찰",
         birthday:"3/7",
         gender:"여자",
-        image:require("./images/귀오미.png")
+        image:require("./images/귀오미.png"),
+        link:`https://www.youtube.com/embed/xdy8HevE64g`
     },
     {
         id:2,
@@ -36,7 +38,8 @@ exports.animals = [
         hobby:"운동",
         birthday:"8/1",
         gender:"남자",
-        image:require("./images/1호.png")
+        image:require("./images/1호.png"),
+        link:`https://www.youtube.com/embed/TZGNhaymHQ4`
     },
     {
         id:3,
@@ -49,7 +52,8 @@ exports.animals = [
         hobby:"노래",
         birthday:"3/10",
         gender:"여자",
-        image:require("./images/미애.png")
+        image:require("./images/미애.png"),
+        link:`https://www.youtube.com/embed/xyjEgqH8Z-Q`
     },
     {
         id:4,
@@ -62,7 +66,8 @@ exports.animals = [
         hobby:"노래",
         birthday:"3/27",
         gender:"여자",
-        image:require("./images/사이다.png")
+        image:require("./images/사이다.png"),
+        link:`https://www.youtube.com/embed/xanSIfC_-7Q`
     },
     {
         id:5,
@@ -75,7 +80,8 @@ exports.animals = [
         hobby:"자연관찰",
         birthday:"6/30",
         gender:"남자",
-        image:require("./images/아잠만.png")
+        image:require("./images/아잠만.png"),
+        link:`https://www.youtube.com/embed/OOuZf5bxLL4`
     },
     {
         id:6,
@@ -88,7 +94,8 @@ exports.animals = [
         hobby:"자연관찰",
         birthday:"10/1",
         gender:"남자",
-        image:require("./images/잭슨.png")
+        image:require("./images/잭슨.png"),
+        link:`https://www.youtube.com/embed/-Itj8TXf6MU`
     },
     {
         id:7,
@@ -101,7 +108,8 @@ exports.animals = [
         hobby:"뛰어다니기",
         birthday:"9/24",
         gender:"여자",
-        image:require("./images/애플.png")
+        image:require("./images/애플.png"),
+        link:`https://www.youtube.com/embed/dqD237cPOYA`
     },
     {
         id:8,
@@ -114,7 +122,8 @@ exports.animals = [
         hobby:"책읽기",
         birthday:"1/27",
         gender:"여자",
-        image:require("./images/오로라.png")
+        image:require("./images/오로라.png"),
+        link:`https://www.youtube.com/embed/pKEyT6MzDiY`
     },
     {
         id:9,
@@ -127,6 +136,7 @@ exports.animals = [
         hobby:"	패션",
         birthday:"9/17",
         gender:"여자",
-        image:require("./images/비앙카.png")
+        image:require("./images/비앙카.png"),
+        link:`https://www.youtube.com/embed/7x1cGC1PDZQ`
     }
 ]
