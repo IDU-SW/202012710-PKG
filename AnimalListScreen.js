@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {
     View,
     Text,
@@ -7,10 +7,40 @@ import {
 } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
 
+import {useSelector, useDispatch} from "react-redux";
+import {addResident, removeResident} from "./Action";
+
 import {useNavigation} from '@react-navigation/native';
 
 
 const AnimalCell = ({animal}) => {
+
+    let [isResident, setResident] = useState(false);
+
+    const residents = useSelector( (state) => {return state.residents});
+
+    useEffect( () => {
+        if ( residents.length > 0 ) {
+            let filtered = residents.filter( item => {
+                return item.id == animal.id
+            });
+            setResident( filtered.length > 0);
+        }
+        else {
+            setResident( false );
+        }
+    }, [residents])
+
+    const dispatch = useDispatch();
+
+    const toggleResident = () => {
+        if (isResident) {
+            dispatch(removeResident(animal.id))
+        } else {
+            dispatch(addResident(animal))
+        }
+    }
+
     const navigator = useNavigation();
 
     const showAnimalDetail = (animal) => {
@@ -31,8 +61,10 @@ const AnimalCell = ({animal}) => {
       </View>
   
       <View style={{height:'100%', width:'25%', flexDirection:'row'}}>
-        <TouchableOpacity style={{justifyContent:'center', marginRight:20}}>
-          <Image source={require('./images/Button/home_off.png')}/>
+        <TouchableOpacity style={{justifyContent:'center', marginRight:20}} onPress={toggleResident}>
+            {isResident ? 
+            <Image source={require('./images/Button/home_on.png')}/> : 
+            <Image source={require('./images/Button/home_off.png')}/>}
         </TouchableOpacity>
         <TouchableOpacity style={{justifyContent:'center'}}
             onPress={()=>showAnimalDetail(animal)}>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {
     View,
     Text,
@@ -6,10 +6,42 @@ import {
     TouchableOpacity,
 } from 'react-native';
 
+import {useSelector, useDispatch} from "react-redux";
+import {addResident, removeResident} from "./Action";
+
 import {useNavigation} from '@react-navigation/native';
 
 const AnimalDetailScreen = ({route}) =>{
+
+    let [isResident, setResident] = useState(false);
+
     const {animal} = route.params;
+
+    const residents = useSelector( (state) => {return state.residents});
+
+    useEffect( () => {
+        if ( residents.length > 0 ) {
+            let filtered = residents.filter( item => {
+                return item.id == animal.id
+            });
+            setResident( filtered.length > 0);
+        }
+        else {
+            setResident( false );
+        }
+    }, [residents])
+
+    const dispatch = useDispatch();
+
+    const toggleResident = () => {
+        if (isResident) {
+            dispatch(removeResident(animal.id))
+        } else {
+            dispatch(addResident(animal))
+        }
+    }
+
+    
     const navigator = useNavigation();
     return (
         <>
@@ -23,8 +55,10 @@ const AnimalDetailScreen = ({route}) =>{
                     <Text style={{fontSize:23, fontWeight:'bold',textAlign:'center', color:'white'}}>{animal.name}</Text>
                 </View>
                 <View style={{width:'15%', justifyContent:'center', alignItems:'center'}}>
-                    <TouchableOpacity>
-                        <Image source={require('./images/Button/home_off.png')}/>
+                    <TouchableOpacity onPress={toggleResident}>
+                        {isResident ? 
+                        <Image source={require('./images/Button/home_on.png')}/> : 
+                        <Image source={require('./images/Button/home_off.png')}/>}
                     </TouchableOpacity>
                 </View>
             </View>
